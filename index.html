@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium House Price Predictor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-gradients">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>House Price AI</h1>
+            <p>Advanced Real Estate Valuation Model</p>
+        </header>
+
+        <main class="glass-panel">
+            <form id="predictionForm">
+                <div class="grid-layout">
+                    <!-- Feature: MedInc -->
+                    <div class="input-group">
+                        <label for="MedInc">Median Income (in 10k)</label>
+                        <input type="number" step="any" id="MedInc" name="MedInc" placeholder="e.g. 5.2" required>
+                    </div>
+
+                    <!-- Feature: HouseAge -->
+                    <div class="input-group">
+                        <label for="HouseAge">House Age (Years)</label>
+                        <input type="number" step="any" id="HouseAge" name="HouseAge" placeholder="e.g. 25" required>
+                    </div>
+
+                    <!-- Feature: AveRooms -->
+                    <div class="input-group">
+                        <label for="AveRooms">Avg Rooms per Household</label>
+                        <input type="number" step="any" id="AveRooms" name="AveRooms" placeholder="e.g. 6.98" required>
+                    </div>
+
+                    <!-- Feature: AveBedrms -->
+                    <div class="input-group">
+                        <label for="AveBedrms">Avg Bedrooms per Household</label>
+                        <input type="number" step="any" id="AveBedrms" name="AveBedrms" placeholder="e.g. 1.02"
+                            required>
+                    </div>
+
+                    <!-- Feature: Population -->
+                    <div class="input-group">
+                        <label for="Population">Population in Block</label>
+                        <input type="number" step="any" id="Population" name="Population" placeholder="e.g. 322"
+                            required>
+                    </div>
+
+                    <!-- Feature: AveOccup -->
+                    <div class="input-group">
+                        <label for="AveOccup">Avg Occupancy</label>
+                        <input type="number" step="any" id="AveOccup" name="AveOccup" placeholder="e.g. 2.55" required>
+                    </div>
+
+                    <!-- Feature: Latitude -->
+                    <div class="input-group">
+                        <label for="Latitude">Latitude</label>
+                        <input type="number" step="any" id="Latitude" name="Latitude" placeholder="e.g. 37.88" required>
+                    </div>
+
+                    <!-- Feature: Longitude -->
+                    <div class="input-group">
+                        <label for="Longitude">Longitude</label>
+                        <input type="number" step="any" id="Longitude" name="Longitude" placeholder="e.g. -122.23"
+                            required>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <button type="submit" id="predictBtn">
+                        <span class="btn-text">Estimate Value</span>
+                        <div class="loading-spinner hidden"></div>
+                    </button>
+                    <div id="error-message" class="hidden"></div>
+                </div>
+            </form>
+
+            <div id="resultModal" class="result-display hidden">
+                <div class="result-content">
+                    <h2>Estimated Value</h2>
+                    <div class="price-tag">
+                        <span class="currency">$</span>
+                        <span id="priceValue">0</span>
+                        <span class="multiplier">k</span>
+                    </div>
+                    <p class="disclaimer">*Estimate based on 8 key market indicators</p>
+                    <button id="resetBtn" class="secondary-btn">New Calculation</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
