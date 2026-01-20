@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // API Call
             // Note: If you are opening index.html as a file, this might fail due to CORS/Protocol issues.
-            const response = await fetch('http://localhost:8000/predict', {
+            const response = await fetch('https://devansh865-california.hf.space/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
